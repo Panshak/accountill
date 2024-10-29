@@ -4,8 +4,8 @@ import {getClients, createClient, updateClient, deleteClient, getClientsByUser} 
 const router = express.Router()
 
 router.get('/', getClients)
-router.get('/user', getClientsByUser);
 router.post('/', createClient)
+router.get('/user', getClientsByUser);
 router.patch('/:id', updateClient)
 router.delete('/:id', deleteClient)
 

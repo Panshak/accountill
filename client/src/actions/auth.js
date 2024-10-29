@@ -23,7 +23,8 @@ export const signin =(formData, openSnackbar, setLoading) => async(dispatch) => 
 
 export const signup =(formData, openSnackbar, setLoading) => async(dispatch) => {
 
-    try {
+    try 
+    {
         //Sign up the user
         const { data } = await api.signUp(formData)
         dispatch({ type: AUTH, data})
@@ -33,31 +34,36 @@ export const signup =(formData, openSnackbar, setLoading) => async(dispatch) => 
         // history.push('/dashboard')
         openSnackbar("Sign up successfull")
 
-    } catch (error) {
+    } 
+    catch (error) 
+    {
         console.log(error)
         openSnackbar(error?.response?.data?.message)
         setLoading(false)
     }
 }
 
-
-
 export const forgot =(formData) => async(dispatch) => {
-    try {
+    try 
+    {
         await api.forgot(formData)
-    } catch (error) {
+    } 
+    catch (error) 
+    {
         console.log(error)
     }
 }
 
-
 export const reset =(formData, history) => async(dispatch) => {
 
-    try {
+    try 
+    {
         await api.reset(formData)
         history.push('/dashboard')
 
-    } catch (error) {
+    } 
+    catch (error) 
+    {
         alert(error)
     }
 }
